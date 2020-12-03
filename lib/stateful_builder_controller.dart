@@ -69,6 +69,19 @@ class _StatefulBuilderState extends State<StatefulBuilder1> {
   Widget build(BuildContext context) => widget.builder(context, setState);
 }
 
+/// StatefulBuilder with SetterController
+class StatefulBuilder0<T> extends _StatefulBuilderBase {
+  StatefulBuilder0({
+    Key? key,
+    required StatefulWidgetBuilder builder,
+    required SetterController controller,
+  }) : super(
+      key: key,
+      builder: builder,
+      controller: controller);
+}
+
+
 /// StatefulBuilder with single property value and SetterController
 class StatefulBuilder1<T> extends _StatefulBuilderBase {
   StatefulBuilder1({

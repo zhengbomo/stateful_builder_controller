@@ -1,11 +1,10 @@
 name: stateful_builder_controller
-description: control setState for StatefulWidget locally.
-version: 0.0.1
-author: bomo
+description: control setState for StatefulWidget locally, optimize performance
+version: 0.0.1-nullsafety.1
 homepage: https://github.com/zhengbomo/stateful_builder_controller
 
 environment:
-  sdk: ">=2.12.0-76.0.dev <3.0.0"
+  sdk: ">=2.12.0-0 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
