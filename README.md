@@ -1,5 +1,8 @@
 ## stateful_builder_controller
 
+[![pub package](https://img.shields.io/pub/v/stateful_builder_controller.svg)](https://pub.dartlang.org/packages/stateful_builder_controller)
+
+
 control setState for StatefulWidget locally
 
 ## Example
