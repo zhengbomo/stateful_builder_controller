@@ -3,7 +3,8 @@
 [![pub package](https://img.shields.io/pub/v/stateful_builder_controller.svg)](https://pub.dartlang.org/packages/stateful_builder_controller)
 
 
-control setState for StatefulWidget locally
+* control setState for StatefulWidget locally
+* cache big value/widget for StatefulWidget
 
 ## Example
 
@@ -27,7 +28,7 @@ Widget build(BuildContext context) {
         child: value,
       );
     },
-    value: Text("ddd"),
+    value: Text("big widget"),
   );
 }
 

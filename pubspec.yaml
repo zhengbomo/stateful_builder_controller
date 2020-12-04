@@ -1,6 +1,6 @@
 name: stateful_builder_controller
-description: control setState for StatefulWidget locally, optimize performance
-version: 0.0.1-nullsafety.1
+description: control setState for StatefulWidget locally, cache value/widget with property
+version: 0.1.0-nullsafety.1
 homepage: https://github.com/zhengbomo/stateful_builder_controller
 
 environment:
