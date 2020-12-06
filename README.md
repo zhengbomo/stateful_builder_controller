@@ -17,7 +17,7 @@ final setterController = SetterController();
 // 2. create StatefulWidget with headerHeight and setterController
 @override
 Widget build(BuildContext context) {
-  return StatefulBuilder1(
+  return StatefulBuilder1<Widget>(
     controller: setterController,
     builder: (context, setter, value) {
       return Container(
@@ -27,7 +27,7 @@ Widget build(BuildContext context) {
         child: value,
       );
     },
-    value: Text("ddd"),
+    value: Text("big widget"),
   );
 }
 

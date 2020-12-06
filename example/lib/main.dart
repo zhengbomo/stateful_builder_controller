@@ -53,25 +53,35 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               'You have pushed the button this many times:2',
             ),
-            StatefulBuilder1<Widget>(
-                builder: (context, setter, value) {
-                  // when call countSetterController.update, only reload here
-                  return Column(
-                    children: [
-                      value,
-                      Text(
-                        '$_counter',
-                        style: Theme.of(context).textTheme.headline4,
-                      ),
-                    ],
-                  );
-                },
-                controller: countSetterController,
-                value: Container(
-                  width: 50,
-                  height: 50,
-                  color: Colors.red,
-                ),
+            StatefulBuilder3<Widget, Widget, Widget>(
+              builder: (context, setter, value1, value2, value3) {
+                print("value");
+                // when call countSetterController.update, only reload here
+                return Column(
+                  children: [
+                    value1,
+                    value2,
+                    Text(
+                      '$_counter',
+                      style: Theme
+                          .of(context)
+                          .textTheme
+                          .headline4,
+                    ),
+                  ],
+                );
+              },
+              controller: countSetterController,
+              value1: Container(
+                width: 50,
+                height: 50,
+                color: Colors.red,
+              ),
+              value2: Container(
+                width: 50,
+                height: 50,
+                color: Colors.green,
+              ),
             ),
           ],
         ),

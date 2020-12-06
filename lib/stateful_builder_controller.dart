@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 
-typedef StatefulWidgetBuilder1<T> = Widget Function(BuildContext context, StateSetter setState, T value);
-typedef StatefulWidgetBuilder2<T1, T2> = Widget Function(BuildContext context, StateSetter setState, T1 t1, T2 t2);
-typedef StatefulWidgetBuilder3<T1, T2, T3> = Widget Function(BuildContext context, StateSetter setState, T1 t1, T2 t2, T3 t3);
-typedef StatefulWidgetBuilder4<T1, T2, T3, T4> = Widget Function(BuildContext context, StateSetter setState, T1 t1, T2 t2, T3 t3, T4 t4);
-typedef StatefulWidgetBuilder5<T1, T2, T3, T4, T5> = Widget Function(BuildContext context, StateSetter setState, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5);
-
+typedef StatefulWidgetBuilder1<T> = Widget Function(
+    BuildContext context, StateSetter setState, T value);
+typedef StatefulWidgetBuilder2<T1, T2> = Widget Function(
+    BuildContext context, StateSetter setState, T1 t1, T2 t2);
+typedef StatefulWidgetBuilder3<T1, T2, T3> = Widget Function(
+    BuildContext context, StateSetter setState, T1 t1, T2 t2, T3 t3);
+typedef StatefulWidgetBuilder4<T1, T2, T3, T4> = Widget Function(
+    BuildContext context, StateSetter setState, T1 t1, T2 t2, T3 t3, T4 t4);
+typedef StatefulWidgetBuilder5<T1, T2, T3, T4, T5> = Widget Function(
+    BuildContext context,
+    StateSetter setState,
+    T1 t1,
+    T2 t2,
+    T3 t3,
+    T4 t4,
+    T5 t5);
 
 /// control setState for StatefulWidget
 ///
@@ -55,10 +65,11 @@ class _StatefulBuilderBase extends StatefulWidget {
   final StatefulWidgetBuilder builder;
 
   @override
-  _StatefulBuilderState createState() => _StatefulBuilderState();
+  _StatefulBuilderState createState() =>
+      _StatefulBuilderState<_StatefulBuilderBase>();
 }
 
-class _StatefulBuilderState extends State<StatefulBuilder1> {
+class _StatefulBuilderState<T extends _StatefulBuilderBase> extends State<T> {
   @override
   void initState() {
     super.initState();
@@ -75,12 +86,8 @@ class StatefulBuilder0<T> extends _StatefulBuilderBase {
     Key key,
     @required StatefulWidgetBuilder builder,
     @required SetterController controller,
-  }) : super(
-      key: key,
-      builder: builder,
-      controller: controller);
+  }) : super(key: key, builder: builder, controller: controller);
 }
-
 
 /// StatefulBuilder with single property value and SetterController
 class StatefulBuilder1<T> extends _StatefulBuilderBase {
@@ -90,9 +97,9 @@ class StatefulBuilder1<T> extends _StatefulBuilderBase {
     @required SetterController controller,
     T value,
   }) : super(
-      key: key,
-      builder: (context, setter) => builder(context, setter, value),
-      controller: controller);
+            key: key,
+            builder: (context, setter) => builder(context, setter, value),
+            controller: controller);
 }
 
 /// StatefulBuilder with two property value and SetterController
@@ -104,9 +111,10 @@ class StatefulBuilder2<T1, T2> extends _StatefulBuilderBase {
     T1 value1,
     T2 value2,
   }) : super(
-      key: key,
-      builder: (context, setter) => builder(context, setter, value1, value2),
-      controller: controller);
+            key: key,
+            builder: (context, setter) =>
+                builder(context, setter, value1, value2),
+            controller: controller);
 }
 
 /// StatefulBuilder with three property value and SetterController
@@ -119,41 +127,43 @@ class StatefulBuilder3<T1, T2, T3> extends _StatefulBuilderBase {
     T2 value2,
     T3 value3,
   }) : super(
-      key: key,
-      builder: (context, setter) => builder(context, setter, value1, value2, value3),
-      controller: controller);
+            key: key,
+            builder: (context, setter) =>
+                builder(context, setter, value1, value2, value3),
+            controller: controller);
 }
 
 /// StatefulBuilder with four property value and SetterController
 class StatefulBuilder4<T1, T2, T3, T4> extends _StatefulBuilderBase {
-  StatefulBuilder4({
-    Key key,
-    @required StatefulWidgetBuilder4<T1, T2, T3, T4> builder,
-    @required SetterController controller,
-    T1 value1,
-    T2 value2,
-    T3 value3,
-    T4 value4
-  }) : super(
-      key: key,
-      builder: (context, setter) => builder(context, setter, value1, value2, value3, value4),
-      controller: controller);
+  StatefulBuilder4(
+      {Key key,
+      @required StatefulWidgetBuilder4<T1, T2, T3, T4> builder,
+      @required SetterController controller,
+      T1 value1,
+      T2 value2,
+      T3 value3,
+      T4 value4})
+      : super(
+            key: key,
+            builder: (context, setter) =>
+                builder(context, setter, value1, value2, value3, value4),
+            controller: controller);
 }
 
 /// StatefulBuilder with four property value and SetterController
 class StatefulBuilder5<T1, T2, T3, T4, T5> extends _StatefulBuilderBase {
-  StatefulBuilder5({
-    Key key,
-    @required StatefulWidgetBuilder5<T1, T2, T3, T4, T5> builder,
-    @required SetterController controller,
-    T1 value1,
-    T2 value2,
-    T3 value3,
-    T4 value4,
-    T5 value5
-  }) : super(
-      key: key,
-      builder: (context, setter) => builder(context, setter, value1, value2, value3, value4, value5),
-      controller: controller);
+  StatefulBuilder5(
+      {Key key,
+      @required StatefulWidgetBuilder5<T1, T2, T3, T4, T5> builder,
+      @required SetterController controller,
+      T1 value1,
+      T2 value2,
+      T3 value3,
+      T4 value4,
+      T5 value5})
+      : super(
+            key: key,
+            builder: (context, setter) => builder(
+                context, setter, value1, value2, value3, value4, value5),
+            controller: controller);
 }
-
